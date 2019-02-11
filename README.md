@@ -11,5 +11,5 @@ pdftohtml CMS-9115-P.pdf -noframes CMS.html
 
 View online at:
 
-* http://joshuamandel.com/interop-2019-nprms/CMS.html#outline
-* http://joshuamandel.com/interop-2019-nprms/ONC.html#outline
+* http://joshuamandel.com/interop-2019-nprms/CMSs.html#outline
+* http://joshuamandel.com/interop-2019-nprms/ONCs.html#outline
