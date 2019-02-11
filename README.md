@@ -5,8 +5,9 @@
 wget https://www.cms.gov/Center/Special-Topic/Interoperability/CMS-9115-P.pdf
 wget https://www.healthit.gov/sites/default/files/nprm/ONCCuresActNPRM.pdf
 
-pdftohtml  ONCCuresActNPRM.pdf -noframes ONC.html
-pdftohtml CMS-9115-P.pdf -noframes CMS.html
+pdftohtml  ONCCuresActNPRM.pdf ONC.html
+pdftohtml CMS-9115-P.pdf CMS.html
+sed -i 's/&#160;/ /g' *.html
 ```
 
 View online at:
