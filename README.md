@@ -8,6 +8,10 @@ wget https://www.healthit.gov/sites/default/files/nprm/ONCCuresActNPRM.pdf
 pdftohtml  ONCCuresActNPRM.pdf ONC.html
 pdftohtml CMS-9115-P.pdf CMS.html
 sed -i 's/&#160;/ /g' *.html
+
+pandoc -t gfm  --toc   CMSs.html -o CMSs.md
+pandoc -t gfm  --toc   ONCs.html -o ONCs.md
+
 ```
 
 View online at:
