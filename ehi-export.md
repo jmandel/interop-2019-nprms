@@ -31,8 +31,8 @@ physical media like CD-ROMs. This is critical because:
 (e.g., if a third party is trying to guide patients toward the export functoinality
 in a variety of portals). This was a clear challenge for anyone trying to identify
 the "Transmit to a third party" features of a patient portal in the MU2 timeframe.
-* Managing physical media takes access out of the realm of modern convenience
-and consumer experience.
+* Managing physical media would take access outside the realm of modern, convenient
+consumer experiences
 * Managing files may be challenging on many patient devices (e.g., mobile phones),
 and some files may be best suited for off-device storage (e.g., in the cloud). API
 connectivity ensures that patients can have a seamless experience for accessing
