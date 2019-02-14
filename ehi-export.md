@@ -38,7 +38,7 @@ and some files may be best suited for off-device storage (e.g., in the cloud). A
 connectivity ensures that patients can have a seamless experience for accessing
 all of their health data, not just a core data set.
 
-## Proposal
+## Key Recommendation
 
 *ONC should require that certified EHRs support full EHI export via patient-accessible API,
 even without standardizing the API or the data payloads.*
