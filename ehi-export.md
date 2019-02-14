@@ -105,5 +105,5 @@ resources, like:
 
 While it's more verbose, advantages of this approach are:
 
-* donsn't require extension properties in the FHIR async response payload
-* scales up to complete database export across all patients, where the number of files might be large enough that listing them all in a single API payload is impractical (specifically: tihs gives the server a way to keep the async status response small, and split URLs across as many ndjson files as needed)
+* doesn't require extension properties in the FHIR async response payload
+* could sale up to complete database export across all patients, where the number of files is large enough that listing them all in a single API payload is impractical (specifically: tihs gives the server a way to keep the async status response small, and split a long list of exported file URLs across as many ndjson files as needed)
