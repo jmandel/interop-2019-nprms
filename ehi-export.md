@@ -1,6 +1,6 @@
 ## Background on ONC's EHI Export requirement
 
-ONC's proposed rule requires that certified EHRs provide support for the
+ONC's proposed rule includes a certification requirement for the
 export of a patient's complete electronic health information (EHI). Under ONC's proposal:
 
 * a patient (or authorized representative) can request that an export be performed
