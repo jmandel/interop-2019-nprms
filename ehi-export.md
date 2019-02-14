@@ -75,7 +75,7 @@ formats or CSVs). The completed export result might look like:
 ```
 
 Note that we use an extension property because the output files don't follow the FHIR async API convention
-(ndjson files containing one resoruce per line; all entries within a given file are of a uniform type).
+(ndjson files containing one resource per line; all entries within a given file are of a uniform type).
 Alternatively, we might avoid using an extension here and instead push the final URLs into `DocumentReference`
 resources, like:
 
@@ -99,8 +99,8 @@ resources, like:
 ... where the `document_references.ndjson` file would have content like:
 
 ```
-{"resourceType": "DocumentReference", "content": [{"attachment": {"url": "http://server.example.org/patient_file_1.zip"}}], "status": "current", }
-{"resourceType": "DocumentReference", "content": [{"attachment": {"url": "http://server.example.org/patient_file_2.json"}}]. "status": "current", }
+{"resourceType": "DocumentReference", "content": [{"attachment": {"url": "http://server.example.org/patient_file_1.zip"}}], "status": "current"}
+{"resourceType": "DocumentReference", "content": [{"attachment": {"url": "http://server.example.org/patient_file_2.json"}}]. "status": "current"}
 ```
 
 While it's more verbose, advantages of this approach are:
