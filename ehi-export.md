@@ -3,11 +3,21 @@
 The 21st Century Cures Act aims to achieve interoperability with APIs that provide
 "access to all data elements of a patient’s electronic health record to the extent
 permissible under applicable privacy laws" -- but ONC's proposed APIs are limited
-only to a "core" data set, rather than enabling "all data elements." This limitation
-is explicitly acnowledged by ONC: 
+only to a "core" data set, rather than enabling "all data elements":
 
-> for the purposes of meeting this portion of the Cures Act’s API Condition of
-> Certification, we interpret the scope of... the [US Core Data for Interoperability].
+> strictly for the scope of the API Condition of Certification, we propose to interpret the meaning of the phrase 
+> “all data elements of a patient’s electronic health record” as follows...
+>
+> [T]he proposed § 170.315(g)(10) certification criterion...
+> would facilitate API access to a limited set of data elements...
+> 
+> Accordingly, for the 
+> purposes of meeting this portion of the Cures Act’s API Condition of Certification, we interpret 
+> the scope of: the ARCH; its associated implementation specifications; and the policy expressed 
+> around the data elements that must be supported by (g)(10)-certified APIs (i.e., FHIR servers) to 
+> constitute “all data elements.”
+
+Somehow, ONC has explicitly interpreted "all data elements" to mean "a limited set of data elements".
 
 **ONC's interpretation flat-out misses the mark established by Cures, and fortunately there's a way to
 remedy the situation with a small tweak to ONC's proposed rule.**
