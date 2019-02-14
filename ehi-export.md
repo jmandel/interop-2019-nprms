@@ -5,7 +5,7 @@ export of a patient's complete electronic health information (EHI). Under ONC's 
 
 * a patient (or authorized representative) can request that an export be performed
 * the scope of data is "all the EHI that the health IT system produces and electronically manages" about the patient, from across the EHR's "entire database, including but not limited to clinical, administrative, and claims/billing data"
-* results must be "timely" and must not require human intervention (though they may not be immediate) 
+* results must be "timely" and must not require manual intervention (though they may not be immediate) 
 * eventually, an export file will be delivered to the patient (or authorized representative)
 * export files may be delivered electronically or on physical media such as a CD-ROM
 * export files must contain "the entire electronic health record for a single patient"
