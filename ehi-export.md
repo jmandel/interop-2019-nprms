@@ -22,7 +22,7 @@ Somehow, ONC has explicitly interpreted "all data elements" to mean "a limited s
 **ONC's interpretation flat-out misses the mark established by Cures, and fortunately there's a way to
 remedy the situation with a small tweak to ONC's proposed rule.**
 
-## Background on ONC's EHI Export requirement
+## Background on ONC's (non-API-oriented) EHI Export requirement
 
 Entirely separate from API access, ONC has proposed a certification requirement for the
 export of a patient's complete electronic health information (EHI).
