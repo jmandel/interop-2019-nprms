@@ -9,7 +9,7 @@ export of a patient's complete electronic health information (EHI). Under ONC's 
 * eventually, an export file will be delivered to the patient (or authorized representative)
 * export files may be delivered electronically or on physical media such as a CD-ROM
 * export files must contain "the entire electronic health record for a single patient"
-* export files must be "computable" (i.e., they can't can't rasterize bake the entire record into a PDF)
+* export files must be "computable" (i.e., they can't can't rasterize the entire record into a PDF)
 * export file formats need not be standardized
 * export file formats must be fully and publicly documented by the vendor, including "data dictionar" and everything else needed to use the export "without loss of information or its meaning"
 
