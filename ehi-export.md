@@ -1,5 +1,3 @@
-# Full EHR Export
-
 ## Background on ONC's EHI Export requirement
 
 ONC's proposed rule requires that certified EHRs provide support for the
