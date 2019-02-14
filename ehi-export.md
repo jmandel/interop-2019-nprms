@@ -1,4 +1,4 @@
-# Cures envisions "all data," but ONC proposes "core data"
+# Cures envisions APIs for "all data"; ONC proposes "a limited set"
 
 The 21st Century Cures Act aims to achieve interoperability with APIs that provide
 "access to all data elements of a patient’s electronic health record to the extent
