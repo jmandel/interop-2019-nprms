@@ -24,7 +24,7 @@ remedy the situation with a small tweak to ONC's proposed rule.**
 
 ## Background on ONC's EHI Export requirement
 
-ONC's proposed rule includes a certification requirement for the
+Entirely separate from API access, ONC has proposed a certification requirement for the
 export of a patient's complete electronic health information (EHI).
 Under ONC's proposal:
 
