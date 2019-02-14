@@ -1,7 +1,22 @@
+# Cures aims for "all data," but ONC delivers "core data"
+
+The 21st Century Cures Act aims to achieve interoperability with APIs that provide
+"access to all data elements of a patient’s electronic health record to the extent
+permissible under applicable privacy laws" -- but ONC's proposed APIs are limited
+only to a "core" data set, rather than enabling "all data elements." This limitation
+is explicitly acnowledged by ONC: 
+
+> for the purposes of meeting this portion of the Cures Act’s API Condition of
+> Certification, we interpret the scope of... the [US Core Data for Interoperability].
+
+**ONC's interpretation flat-out misses the mark established by Cures, and fortunately there's a way to
+remedy the situation with a small tweak to ONC's proposed rule.**
+
 ## Background on ONC's EHI Export requirement
 
 ONC's proposed rule includes a certification requirement for the
-export of a patient's complete electronic health information (EHI). Under ONC's proposal:
+export of a patient's complete electronic health information (EHI).
+Under ONC's proposal:
 
 * a patient (or authorized representative) can request that an export be performed
 * the scope of data is "all the EHI that the health IT system produces and electronically manages" about the patient, from across the EHR's "entire database, including but not limited to clinical, administrative, and claims/billing data"
@@ -12,12 +27,12 @@ export of a patient's complete electronic health information (EHI). Under ONC's 
 * export files must be "computable" (i.e., they can't can't rasterize the entire record into a PDF)
 * export file formats need not be standardized, but must be fully and publicly documented by the vendor, including "data dictionary" and everything else needed to use the export "without loss of information or its meaning"
 
-## ONC's proposal is spot-on — but has two important gaps
+## To meet the Cures API intent, ONC's Export just needs an API.
 
 ONC's proposal comes very close to enabling a vibrant ecosystem where third-party
 services can benefit from interpreting complete clinical records. It's a strong
 complement to the standardized data payloads required for USCDI export. But
-for this "full EHI export" to provide a usable consumer experience, it needs to be:
+for this "full EHI export" to provide a usable consumer experience, it must be:
 
 1) **Accessible directly to a patient** (or authorized representative), rather than
 being built as a feature for clinic staff (e.g., in a scenario where a patient makes
@@ -41,7 +56,8 @@ all of their health data, not just a core data set.
 ## Key Recommendation
 
 *ONC should require that certified EHRs support full EHI export via patient-accessible API,
-even without standardizing the API or the data payloads.*
+even without standardizing the API or the data payloads. This will meet the Cures intent
+for API access.*
 
 ## Eventually, industry can then drive toward common practices, like...
 
