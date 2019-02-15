@@ -19,7 +19,7 @@ only to a "core" data set, rather than enabling "all data elements":
 
 Somehow, ONC has explicitly interpreted "all data elements" to mean "a limited set of data elements".
 
-**ONC's interpretation flat-out misses the mark established by Cures, and fortunately there's a way to
+**ONC's interpretation misses the mark established by Cures, and fortunately there's a way to
 remedy the situation with a small tweak to ONC's proposed rule.**
 
 ## Background on ONC's (non-API-oriented) EHI Export requirement
@@ -68,6 +68,9 @@ all of their health data, not just a core data set.
 *ONC should require that certified EHRs support full EHI export via patient-accessible API,
 even without standardizing the API or the data payloads. This will meet the Cures intent
 for API access.*
+
+Note that this EHI export API is in addition to the other proposed patient-access API requirements
+(i.e., USCDI access using SMART on FHIR).
 
 ## Eventually, industry can then drive toward common practices, like...
 
