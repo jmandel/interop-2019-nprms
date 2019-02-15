@@ -53,7 +53,7 @@ a request by phoning the medical records department, and departmental staff hits
 hidden deep within a patient portal experience, or being crippled by the exchange of
 physical media like CD-ROMs. This is critical because:
 * Portals experiences vary, making features difficult to find and correctly describe
-(e.g., if a third party is trying to guide patients toward the export functoinality
+(e.g., if a third party is trying to guide patients toward the export functionality
 in a variety of portals). This was a clear challenge for anyone trying to identify
 the "Transmit to a third party" features of a patient portal in the MU2 timeframe.
 * Managing physical media would take access outside the realm of modern, convenient
@@ -80,33 +80,18 @@ For example, we could define an operation, accessible to patient-authorized apps
 
 ### `GET /Patient/:id/$cures-ehi-export`
 
-This operation builds on the asynchronous export capabilities currently being defined in FHIR.
-The response payload, rather than including standardized FHIR resources with the patient's EHR,
-simply returns a list of URLs to files in vendor-defined formats (e.g., vendor-specific JSON
-formats or CSVs). The completed export result might look like:
+This operation builds on the FHIR Bulk Data asynchronous export capabilities currently
+being defined (often referred to as "Flat FHIR"). In this use case, the response payload,
+in addition to including FHIR resources with the patient's data in the structured FHIR
+format when available, would also include FHIR `DocumentReference` resources that embed or
+provide urls pointing to files in vendor-defined formats (e.g., vendor-specific JSON
+formats or CSV database table snapshots). The `DocumentReference` resources can also
+incorporate metadata about each file, such as a link to the corresponding data dictionary
+and documentation in the `description` element, a vendor defined identifier for the data
+being provided in the `type` element, and the file's data format in the `attachment`
+element's `contentType` element. 
 
-```
-{
-  "transactionTime": "[instant]",
-  "request" : "[base]/Patient/123/$cures-ehi-export", 
-  "requiresAccessToken" : true,
-  "extension": {
-    "ehiFiles": [
-      "http://server.example.org/patient_file_1.zip",
-      "http://server.example.org/patient_file_2.json",
-    ]
-  },
-  "error" : [{
-    "type" : "OperationOutcome",
-    "url" : "http://serverpath2/err_file_1.ndjson"
-  }]
-}
-```
-
-Note that we use an extension property because the output files don't follow the FHIR async API convention
-(ndjson files containing one resource per line; all entries within a given file are of a uniform type).
-Alternatively, we might avoid using an extension here and instead push the final URLs into `DocumentReference`
-resources, like:
+The completed export result might look like:
 
 ```
 {
@@ -114,25 +99,35 @@ resources, like:
   "request" : "[base]/Patient/123/$cures-ehi-export", 
   "requiresAccessToken" : true,
   "output" : [{
+    "type" : "Patient",
+    "url" : "http://serverpath2/patient.ndjson"
+  },{
+    "type" : "Observation",
+    "url" : "http://serverpath2/observations.ndjson"
+  },{
     "type" : "DocumentReference",
-    "url" : "http://serverpath2/document_references.ndjson"
+    "url" : "http://serverpath2/csv_export.ndjson"
   }],
   "error" : [{
     "type" : "OperationOutcome",
     "url" : "http://serverpath2/err_file_1.ndjson"
   }]
-
 }
 ```
 
-... where the `document_references.ndjson` file would have content like:
+... where the `document_references.ndjson` file would contain items like:
 
 ```
-{"resourceType": "DocumentReference", "content": [{"attachment": {"url": "http://server.example.org/patient_file_1.zip"}}], "status": "current"}
-{"resourceType": "DocumentReference", "content": [{"attachment": {"url": "http://server.example.org/patient_file_2.json"}}]. "status": "current"}
+{
+  "resourceType": "DocumentReference",
+  "description": "Demographic information not included in Patient resource, described at http://vendor.com/docs/cures-ehi-demographics.html",
+  "type": {
+    "coding": [{"system": "http://vendor.com/", "code": "demo-1", "display": "Demographics table export"}]
+  },
+  "content": [{
+    "attachment": {"url": "http://server.example.org/patient_file_1.csv", "contentType": "text/csv"}
+  }],
+  "status": "current"
+}
+...
 ```
-
-While it's more verbose, advantages of this approach are:
-
-* doesn't require extension properties in the FHIR async response payload
-* could sale up to complete database export across all patients, where the number of files is large enough that listing them all in a single API payload is impractical (specifically: tihs gives the server a way to keep the async status response small, and split a long list of exported file URLs across as many ndjson files as needed)
