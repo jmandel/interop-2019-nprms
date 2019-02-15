@@ -129,5 +129,4 @@ The completed export result might look like:
   }],
   "status": "current"
 }
-...
 ```
