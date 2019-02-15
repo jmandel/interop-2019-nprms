@@ -37,7 +37,7 @@ Under ONC's proposal:
 * export files must be "computable" (i.e., they can't can't rasterize the entire record into a PDF)
 * export file formats need not be standardized, but must be fully and publicly documented by the vendor, including "data dictionary" and everything else needed to use the export "without loss of information or its meaning"
 
-## To meet the Cures API intent, ONC's Export just needs an API.
+## To meet the Cures API intent, ONC's EHI Export just needs an API.
 
 ONC's proposal comes very close to enabling a vibrant ecosystem where third-party
 services can benefit from interpreting complete clinical records. It's a strong
